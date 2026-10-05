@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YouMath → PDF</title>
+<meta name="description" content="Bookmarklet per salvare in PDF le lezioni di YouMath con formule, grafici e impaginazione pulita.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+<style>
+:root{--ink:#1d1d1f;--muted:#5f6068;--accent:#19245b;--warm:#c85a00;--rule:#dcdce2;--bg:#fbfaf7;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--ink:#e9e9ee;--muted:#a3a4ad;--accent:#9fb0ff;--warm:#ff9d4d;--rule:#33343c;--bg:#15161b;--card:#1d1f26}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'Source Serif 4',Georgia,serif}
+main{max-width:720px;margin:0 auto;padding:48px 16px 72px}
+.kick{font:600 12px system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--warm)}
+h1{font-size:40px;line-height:1.1;margin:6px 0 12px;color:var(--accent)}
+h2{font-size:22px;color:var(--accent);margin:40px 0 10px}
+.lead{font-size:19px;color:var(--muted);margin:0 0 28px}
+.install{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:22px;text-align:center}
+.btn{display:inline-block;font:600 16px system-ui,sans-serif;background:var(--accent);color:var(--bg);text-decoration:none;padding:12px 22px;border-radius:999px;cursor:grab}
+.hint{font-size:14px;color:var(--muted);margin:12px 0 0}
+ol{padding-left:22px}li{margin:6px 0}
+textarea{width:100%;height:110px;font:12px ui-monospace,monospace;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:8px;padding:10px;resize:vertical}
+button.copy{font:600 14px system-ui,sans-serif;background:transparent;color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:7px 12px;cursor:pointer;margin-top:8px}
+.note{font-size:14px;color:var(--muted);border-top:1px solid var(--rule);margin-top:48px;padding-top:16px}
+code{font:14px ui-monospace,monospace}
+</style>
+</head>
+<body>
+<main>
+  <div class="kick">Bookmarklet</div>
+  <h1>YouMath → PDF</h1>
+  <p class="lead">Salva le lezioni di YouMath in un PDF ordinato, con tutte le formule (anche quelle che PrintFriendly fa sparire), impaginate in pagine A4 con grafici, tabella intera e numeri di pagina.</p>
+
+  <div class="install">
+    <a class="btn" href="{{BOOKMARKLET}}" onclick="alert('Non cliccarlo qui: trascinalo nella barra dei preferiti, poi usalo su una lezione di YouMath.');return false;">YouMath → PDF</a>
+    <p class="hint">Trascina il pulsante nella barra dei preferiti (Ctrl+Maiusc+B per mostrarla).</p>
+  </div>
+
+  <h2>Come si usa</h2>
+  <ol>
+    <li>Apri una lezione su <strong>youmath.it</strong>.</li>
+    <li>Clicca il segnalibro <em>YouMath → PDF</em>: si apre un'anteprima impaginata e poi la finestra di stampa.</li>
+    <li>Scegli <strong>Salva come PDF</strong>: margini, intestazione e numeri di pagina li gestisce il bookmarklet.</li>
+  </ol>
+  <p>Se non si apre nulla, il browser ha bloccato il pop-up: consentilo per youmath.it e riprova.</p>
+
+  <h2>Installazione manuale</h2>
+  <p>Se il trascinamento non funziona, crea un nuovo segnalibro e incolla questo codice nel campo URL:</p>
+  <textarea id="code" readonly>{{BOOKMARKLET}}</textarea>
+  <button class="copy" onclick="var t=document.getElementById('code');t.select();navigator.clipboard?navigator.clipboard.writeText(t.value).then(()=>this.textContent='Copiato'):(document.execCommand('copy'),this.textContent='Copiato')">Copia codice</button>
+
+  <p class="note">Progetto indipendente, non affiliato a YouMath. Lo strumento non scarica né ridistribuisce contenuti: impagina la pagina che stai già leggendo, per uso personale di studio. I contenuti restano di © Math Industries Srl.</p>
+</main>
+</body>
+</html>

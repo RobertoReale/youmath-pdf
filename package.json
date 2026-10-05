@@ -1,0 +1,13 @@
+{
+  "name": "youmath-pdf",
+  "version": "1.0.0",
+  "description": "Bookmarklet per salvare in PDF le lezioni di YouMath con formule e impaginazione pulita",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "terser": "^5.31.0"
+  },
+  "license": "MIT"
+}
